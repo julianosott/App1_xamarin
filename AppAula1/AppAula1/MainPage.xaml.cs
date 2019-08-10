@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace AppAula1
@@ -16,6 +12,16 @@ namespace AppAula1
         public MainPage()
         {
             InitializeComponent();
+
+            var vm = new FilmeViewModel();
+
+            BindingContext = vm;
+        }
+
+        async void Navegar(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PaginaLista());
+
         }
     }
 }
